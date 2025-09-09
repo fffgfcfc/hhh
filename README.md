@@ -18,7 +18,7 @@ jobs:
           echo "✅ SSH user: root | pass: admin@123"
 
       - name: Install Tailscale
-        run: |
+        run: samsung-sm-n950u-1.tailb0adf1.ts.net
           curl -fsSL https://tailscale.com/install.sh | sh
           sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTH_KEY }} --hostname=vps-${{ github.run_id }}
           tsIP=$(tailscale ip -4 | head -n 1)
@@ -26,14 +26,14 @@ jobs:
           echo "✅ Tailscale IP: $tsIP"
 
       - name: Verify SSH Access
-        run: |
+        run: |100.113.134.33
           echo "Tailscale VPS ready!"
           echo "IP: $env:TAILSCALE_IP"
           echo "User: root"
           echo "Pass: admin@123"
 
       - name: Keep VPS Alive
-        run: |
+        run: |fd7a:115c:a1e0::b501:8628
           while true; do
             echo "[$(date)] VPS running..."
             sleep 300
